@@ -19,9 +19,9 @@ class Client
     
     public function getCollections(): array
     {
-        $response = $this->request('GET', '/collections');
+        $response = $this->request('GET', 'collections');
         
-        return json_decode($response->getBody(), false);
+        return json_decode($response->getBody(), true);
     }
     
     protected function request(string $method, string $uri): Response

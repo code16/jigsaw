@@ -19,7 +19,7 @@ class FetchCollections
                 collect($collection['items'])
                     ->map(fn ($item) => [
                         ...$item,
-                        'filename' => $item['slug'],
+                        'filename' => $item['slug'] ?? $item['id'],
                     ])
             );
         }
