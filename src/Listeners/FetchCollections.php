@@ -1,7 +1,8 @@
 <?php
 
-namespace Code16\JockoClient;
+namespace Code16\JockoClient\Listeners;
 
+use Code16\JockoClient\Client;
 use TightenCo\Jigsaw\Jigsaw;
 
 class FetchCollections
@@ -19,7 +20,7 @@ class FetchCollections
                 collect($collection['items'])
                     ->map(fn ($item) => [
                         ...$item,
-                        'filename' => $item['slug'] ?? $item['id'],
+                        'filename' => $item['key'] ?? $item['slug'] ?? $item['id'],
                     ])
             );
         }
