@@ -18,16 +18,16 @@ composer require code16/novak
 
 Add following to the env
 ```dotenv
-NOVAK_API_URL=https://cms.code16.fr
-NOVAK_API_KEY=...
+JOCKO_API_URL=https://cms.code16.fr
+JOCKO_API_TOKEN=...
 ```
 
 Add following to your `config.php`
 ```php
 [
-    'novak' => [
-        'url' => env('NOVAK_API_URI'),
-        'token' => env('NOVAK_API_TOKEN'),
+    'jocko_api' => [
+        'url' => env('JOCKO_API_URL'),
+        'token' => env('JOCKO_API_TOKEN'),
     ],
 ]
 ```
