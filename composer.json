@@ -1,11 +1,11 @@
 {
-    "name": "code16/novak",
+    "name": "code16/jocko-client",
     "description": "",
     "keywords": [
         "code16",
-        "novak"
+        "jocko-client"
     ],
-    "homepage": "https://github.com/code16/novak",
+    "homepage": "https://github.com/code16/jocko-client",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Code16\\Novak\\": "src"
+            "Code16\\JockoClient\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Code16\\Novak\\Tests\\": "tests"
+            "Code16\\JockoClient\\Tests\\": "tests"
         }
     },
     "scripts": {

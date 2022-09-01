@@ -1,6 +1,6 @@
 <?php
 
-namespace Code16\Novak;
+namespace Code16\JockoClient;
 
 use GuzzleHttp\Psr7\Response;
 

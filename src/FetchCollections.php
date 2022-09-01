@@ -1,6 +1,7 @@
 <?php
 
-namespace Code16\Novak;
+namespace Code16\JockoClient;
+
 use TightenCo\Jigsaw\Jigsaw;
 
 class FetchCollections
