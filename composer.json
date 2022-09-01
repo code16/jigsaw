@@ -1,0 +1,44 @@
+{
+    "name": "code16/novak",
+    "description": "",
+    "keywords": [
+        "code16",
+        "novak"
+    ],
+    "homepage": "https://github.com/code16/novak",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Philippe Lonchampt",
+            "email": "philippe@code16.fr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "tightenco/jigsaw": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Code16\\Novak\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Code16\\Novak\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
