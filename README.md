@@ -27,7 +27,7 @@ Add following to your `config.php`
 [
     'novak' => [
         'url' => env('NOVAK_API_URI'),
-        'key' => env('NOVAK_API_KEY'),
+        'token' => env('NOVAK_API_TOKEN'),
     ],
 ]
 ```

@@ -1,7 +1,6 @@
 <?php
 
 namespace Code16\Novak;
-use GuzzleHttp\Client;
 use TightenCo\Jigsaw\Jigsaw;
 
 class FetchCollections
@@ -10,16 +9,18 @@ class FetchCollections
     {
         $config = $jigsaw->getConfig('novak');
     
-        $client = new Client(['base_uri' => $config['url']]);
-        $response = $client->request('GET', '/api/collections', [
-            'query' => [
-                'key' => $config['key'],
-            ],
-        ]);
-        $data = json_decode($response->getBody());
+        $client = new Client($config['url'], $config['token']);
+        $collections = $client->getCollections();
         
-        foreach ($data as $name => $collection) {
-            $jigsaw->setConfig("collections.$name.items", $collection->items);
+        foreach ($collections as $name => $collection) {
+            $jigsaw->setConfig(
+                "collections.$name.items",
+                collect($collection->items)
+                    ->map(fn ($item) => [
+                        ...$item,
+                        'filename' => $item['slug'],
+                    ])
+            );
         }
     }
 }
