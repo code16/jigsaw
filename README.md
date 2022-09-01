@@ -17,23 +17,19 @@ composer require code16/novak
 ## Usage
 
 Add following to the env
-```
+```dotenv
 NOVAK_API_URL=https://cms.code16.fr
 NOVAK_API_KEY=...
 ```
 
 Add following to your `config.php`
-```
+```php
 [
     'novak' => [
         'url' => env('NOVAK_API_URI'),
         'key' => env('NOVAK_API_KEY'),
     ],
 ]
-```
-
-```php
-// Usage description here
 ```
 
 ### Testing
