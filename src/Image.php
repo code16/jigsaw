@@ -17,4 +17,9 @@ class Image
             "h-$height" => $height,
         ])));
     }
+    
+    public function __toString(): string
+    {
+        return $this->src;
+    }
 }

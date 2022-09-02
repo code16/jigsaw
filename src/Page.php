@@ -15,6 +15,11 @@ class Page extends CollectionItem
         $this->cover = $this->get('cover') ? new Image($this->get('cover')) : null;
     }
     
+    public function image(string $src): ?Image
+    {
+        return $src ? new Image($src) : null;
+    }
+    
     public static function fromItem(CollectionItem $item)
     {
         $newItem = new static($item);
