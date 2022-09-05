@@ -6,12 +6,14 @@ use TightenCo\Jigsaw\Collection\CollectionItem;
 
 class Page extends CollectionItem
 {
+    public ?string $title;
     public ?Image $cover;
     
     public function __construct($items = [])
     {
         parent::__construct($items);
         
+        $this->title = $this->get('title');
         $this->cover = $this->get('cover') ? new Image($this->get('cover')) : null;
     }
     

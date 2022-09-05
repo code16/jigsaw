@@ -23,6 +23,10 @@ class FetchCollections
                         'filename' => $item['key'] ?? $item['slug'] ?? $item['id'],
                     ])
             );
+            
+            if (! $jigsaw->getConfig("collections.$name.sort")) {
+                $jigsaw->setConfig("collections.$name.sort", 'order');
+            }
         }
     }
 }
