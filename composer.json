@@ -1,11 +1,11 @@
 {
-    "name": "code16/jocko-client",
+    "name": "code16/jigsaw",
     "description": "",
     "keywords": [
         "code16",
-        "jocko-client"
+        "jigsaw"
     ],
-    "homepage": "https://github.com/code16/jocko-client",
+    "homepage": "https://github.com/code16/jigsaw",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -25,12 +25,15 @@
     },
     "autoload": {
         "psr-4": {
-            "Code16\\JockoClient\\": "src"
-        }
+            "Code16\\Jigsaw\\": "src"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Code16\\JockoClient\\Tests\\": "tests"
+            "Code16\\Jigsaw\\Tests\\": "tests"
         }
     },
     "scripts": {

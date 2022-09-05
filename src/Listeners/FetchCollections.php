@@ -1,8 +1,8 @@
 <?php
 
-namespace Code16\JockoClient\Listeners;
+namespace Code16\Jigsaw\Listeners;
 
-use Code16\JockoClient\Client;
+use Code16\Jigsaw\Client;
 use TightenCo\Jigsaw\Jigsaw;
 
 class FetchCollections

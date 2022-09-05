@@ -1,6 +1,6 @@
 <?php
 
-namespace Code16\JockoClient;
+namespace Code16\Jigsaw;
 
 use TightenCo\Jigsaw\Collection\CollectionItem;
 

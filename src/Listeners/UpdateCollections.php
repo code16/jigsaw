@@ -1,8 +1,8 @@
 <?php
 
-namespace Code16\JockoClient\Listeners;
+namespace Code16\Jigsaw\Listeners;
 
-use Code16\JockoClient\Page;
+use Code16\Jigsaw\Page;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 use TightenCo\Jigsaw\Jigsaw;
 use TightenCo\Jigsaw\PageVariable;
