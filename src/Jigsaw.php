@@ -18,8 +18,8 @@ class Jigsaw
     
         Facade::setFacadeApplication($container);
     
+        $container->bind('markdownParser', fn () => new MarkdownParser());
         $container->bind('blade.compiler', 'bladeCompiler');
-    
         $container->bind(\Illuminate\Contracts\View\Factory::class, Factory::class);
     }
 }

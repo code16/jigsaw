@@ -2,7 +2,7 @@
 
 namespace Code16\Jigsaw\Listeners;
 
-use Code16\Jigsaw\Client;
+use Code16\Jigsaw\JockoClient;
 use TightenCo\Jigsaw\Jigsaw;
 
 class FetchCollections
@@ -11,7 +11,7 @@ class FetchCollections
     {
         $config = $jigsaw->getConfig('jocko_api');
     
-        $client = new Client($config['url'], $config['token']);
+        $client = new JockoClient($config['url'], $config['token']);
         $collections = $client->getCollections();
         
         foreach ($collections as $name => $collection) {

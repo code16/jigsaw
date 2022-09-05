@@ -4,7 +4,7 @@ namespace Code16\Jigsaw;
 
 use GuzzleHttp\Psr7\Response;
 
-class Client
+class JockoClient
 {
     protected \GuzzleHttp\Client $client;
     
