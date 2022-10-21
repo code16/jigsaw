@@ -22,6 +22,7 @@ class Image
         ])));
     }
     
+    // https://image-component.nextjs.gallery/ "responsive" mode
     public function responsiveSrcSet(array $sizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840]): string
     {
         return collect($sizes)->map(fn ($size) => "{$this->thumbnail($size)} {$size}w")->join(', ');
