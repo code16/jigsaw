@@ -22,7 +22,7 @@ class Page extends CollectionItem
         return $src ? new Image($src) : null;
     }
     
-    public static function fromItem(CollectionItem $item)
+    public static function fromItem(CollectionItem $item): static
     {
         $newItem = new static($item);
         $newItem->collection = $item->collection;
