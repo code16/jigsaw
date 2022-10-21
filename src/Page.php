@@ -26,7 +26,7 @@ class Page extends CollectionItem
     {
         $newItem = new static($item);
         $newItem->collection = $item->collection;
-        $newItem->_content = $item->_content;
+        $newItem->setContent($item->getContent());
         $newItem->_meta = $item->_meta;
         
         return $newItem;

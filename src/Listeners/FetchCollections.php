@@ -18,10 +18,9 @@ class FetchCollections
             $jigsaw->setConfig(
                 "collections.$name.items",
                 collect($collection['items'])
-                    ->map(fn ($item) => [
-                        ...$item,
+                    ->map(fn ($item) => array_merge($item, [
                         'filename' => $item['key'] ?? $item['slug'] ?? $item['id'],
-                    ])
+                    ]))
             );
             
             if (! $jigsaw->getConfig("collections.$name.sort")) {
