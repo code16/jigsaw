@@ -33,6 +33,16 @@ class Jocko
         return $this->withCache('config', fn () => $this->client->getConfig());
     }
     
+    public function clearCache(): void
+    {
+        $this->filesystem->deleteDirectory($this->cachePath);
+    }
+    
+    public function cacheEnabled(): bool
+    {
+        return $this->shouldCache;
+    }
+    
     protected function withCache(string $cacheKey, callable $getter)
     {
         $cachedFilePath = $this->cachePath . "/$cacheKey.json";

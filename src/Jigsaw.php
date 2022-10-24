@@ -2,6 +2,7 @@
 
 namespace Code16\Jigsaw;
 
+use Code16\Jigsaw\Listeners\ClearCache;
 use Code16\Jigsaw\Listeners\FetchCollections;
 use Code16\Jigsaw\Listeners\FetchConfig;
 use Illuminate\Container\Container;
@@ -13,6 +14,7 @@ class Jigsaw
 {
     public static function init(EventBus $events, Container $container): void
     {
+        $events->beforeBuild(ClearCache::class);
         $events->beforeBuild(FetchCollections::class);
 //        $events->beforeBuild(FetchConfig::class);
     
