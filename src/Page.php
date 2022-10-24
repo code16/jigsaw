@@ -21,14 +21,4 @@ class Page extends CollectionItem
     {
         return $src ? new Image($src) : null;
     }
-    
-    public static function fromItem(CollectionItem $item): static
-    {
-        $newItem = new static($item);
-        $newItem->collection = $item->collection;
-        $newItem->setContent($item->getContent());
-        $newItem->_meta = $item->_meta;
-        
-        return $newItem;
-    }
 }

@@ -2,29 +2,33 @@
 
 namespace Code16\Jigsaw\Listeners;
 
-use Code16\Jigsaw\JockoClient;
+use Code16\Jigsaw\Jocko;
+use Code16\Jigsaw\Page;
 use TightenCo\Jigsaw\Jigsaw;
 
 class FetchCollections
 {
     public function handle(Jigsaw $jigsaw)
     {
-        $config = $jigsaw->getConfig('jocko_api');
-    
-        $client = new JockoClient($config['url'], $config['token']);
-        $collections = $client->getCollections();
+        $jocko = new Jocko($jigsaw);
+        $collections = $jocko->getCollections();
         
-        foreach ($collections as $name => $collection) {
-            $jigsaw->setConfig(
-                "collections.$name.items",
-                collect($collection['items'])
-                    ->map(fn ($item) => array_merge($item, [
-                        'filename' => $item['key'] ?? $item['slug'] ?? $item['id'],
-                    ]))
-            );
-            
-            if (! $jigsaw->getConfig("collections.$name.sort")) {
-                $jigsaw->setConfig("collections.$name.sort", 'order');
+        foreach ($jigsaw->getConfig('collections') as $key => $collectionConfig) {
+            $collectionKey = $collectionConfig['collectionKey'] ?? $key;
+            if($collection = $collections[$collectionKey] ?? null) {
+                $jigsaw->setConfig(
+                    "collections.$key.items",
+                    collect($collection['items'])
+                        ->map(fn ($item) => array_merge($item, [
+                            'filename' => $item['key'] ?? $item['slug'] ?? $item['id'],
+                        ]))
+                );
+    
+                $jigsaw->setConfig("collections.$key.map", fn ($item) => Page::fromItem($item));
+    
+                if (! $jigsaw->getConfig("collections.$key.sort")) {
+                    $jigsaw->setConfig("collections.$key.sort", 'order');
+                }
             }
         }
     }
