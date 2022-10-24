@@ -28,6 +28,11 @@ class Jocko
         return $this->withCache('collections', fn () => $this->client->getCollections());
     }
     
+    public function getConfig(): array
+    {
+        return $this->withCache('config', fn () => $this->client->getConfig());
+    }
+    
     protected function withCache(string $cacheKey, callable $getter)
     {
         $cachedFilePath = $this->cachePath . "/$cacheKey.json";
