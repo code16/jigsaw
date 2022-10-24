@@ -24,6 +24,13 @@ class JockoClient
         return json_decode($response->getBody(), true);
     }
     
+    public function getConfig(): array
+    {
+        $response = $this->request('GET', 'config');
+        
+        return json_decode($response->getBody(), true);
+    }
+    
     protected function request(string $method, string $uri): Response
     {
         $headers = [];
