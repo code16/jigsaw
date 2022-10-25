@@ -19,15 +19,16 @@ class FetchCollections
                 $jigsaw->setConfig(
                     "collections.$key.items",
                     collect($collection['items'])
-                        ->map(fn ($item) => array_merge($item, [
+                        ->map(fn ($item, $i) => array_merge($item, [
                             'filename' => $item['key'] ?? $item['slug'] ?? $item['id'],
+                            'index' => $i,
                         ]))
                 );
     
                 $jigsaw->setConfig("collections.$key.map", fn ($item) => Page::fromItem($item));
     
                 if (! $jigsaw->getConfig("collections.$key.sort")) {
-                    $jigsaw->setConfig("collections.$key.sort", 'order');
+                    $jigsaw->setConfig("collections.$key.sort", 'index');
                 }
             }
         }
