@@ -16,7 +16,7 @@ class Jigsaw
     {
         $events->beforeBuild(ClearCache::class);
         $events->beforeBuild(FetchCollections::class);
-//        $events->beforeBuild(FetchConfig::class);
+        $events->beforeBuild(FetchConfig::class);
     
         Facade::setFacadeApplication($container);
     
