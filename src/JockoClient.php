@@ -33,7 +33,9 @@ class JockoClient
     
     protected function request(string $method, string $uri): Response
     {
-        $headers = [];
+        $headers = [
+            'Accept' => 'application/json',
+        ];
         
         if ($this->token) {
             $headers['Authorization'] = "Bearer $this->token";
