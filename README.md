@@ -1,8 +1,5 @@
 # Very short description of the package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/code16/jocko-client.svg?style=flat-square)](https://packagist.org/packages/code16/novak)
-[![Total Downloads](https://img.shields.io/packagist/dt/code16/jocko-client.svg?style=flat-square)](https://packagist.org/packages/code16/novak)
-
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
 ## Installation
@@ -10,7 +7,7 @@ This is where your description should go. Try and limit it to a paragraph or two
 You can install the package via composer:
 
 ```bash
-composer require code16/jocko-client
+composer require code16/jigsaw
 ```
 
 ## Usage
